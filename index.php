@@ -31,9 +31,6 @@ if (isset($_GET["url"])) {
             if (substr($aux, strlen($aux) - 4) == "http://ivoox") {
                 $array[] = $aux;
             }
-
-            var_dump($array);
-
             //$posinicial = strpos($page, 'href', $posinicial + 6);
             //$posfinal = strpos($page, "\"", $posinicial + 6);
 
