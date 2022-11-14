@@ -22,7 +22,7 @@ if (isset($_GET["url"])) {
         //$posinicial = strpos($page, 'href');
         $posinicial = strpos($page, '<enclosure url="');
         //$posfinal = strpos($page, "\"", $posinicial + 6);
-        $posfinal = strpos($page, "\" length", $posinicial);
+        $posfinal = strpos($page, "\" type=", $posinicial);
         while ($posinicial) {
             //$aux = substr($page, $posinicial + 6, $posfinal - ($posinicial + 6));
             $aux = substr($page, $posinicial + 16, $posfinal - ($posinicial + 16));            
@@ -32,12 +32,14 @@ if (isset($_GET["url"])) {
                 $array[] = $aux;
             }
 
+            var_dump($array);
+
             //$posinicial = strpos($page, 'href', $posinicial + 6);
             //$posfinal = strpos($page, "\"", $posinicial + 6);
 
         $posinicial = strpos($page, '<enclosure url="', $posinicial + 10);
         //$posfinal = strpos($page, "\"", $posinicial + 6);
-        $posfinal = strpos($page, "\" length", $posinicial);
+        $posfinal = strpos($page, "\" type=", $posinicial);
         }
         $salida = '[';
         foreach ($array as $key => $value) {
